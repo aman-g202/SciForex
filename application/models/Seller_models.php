@@ -19,10 +19,11 @@
 			// $_ = $this->db->query($sql);
 			// $this->db->where('phone', $phone);
 			// $_ = $this->db->update('sellerinfo',$sellermore);
-			if ($sellermore['aadharcard'] == null) {
+			if ($sellermore['aadharcard'] != null) {
 				# code...
-				$data=array('pancard'=>$sellermore['pancard'], 'rbino'=>$sellermore['rbino'], 'businessname'=>$sellermore['businessname'], 'businessaddress'=>$sellermore['businessaddress'], 'businesstype'=>$sellermore['businesstype'], 'pincode'=>$sellermore['pincode']);
+				$data=array('pancard'=>$sellermore['pancard'], 'aadharcard'=>$sellermore['aadharcard'], 'rbino'=>$sellermore['rbino'], 'businessname'=>$sellermore['businessname'], 'businessaddress'=>$sellermore['businessaddress'], 'businesstype'=>$sellermore['businesstype'], 'pincode'=>$sellermore['pincode']);
 				$this->db->set('pancard','pancard',false);
+				$this->db->set('aadharcard','aadharcard',false);
 				$this->db->set('rbino','rbino',false);
 				$this->db->set('businessname','businessname',false);
 				$this->db->set('businessaddress','businessaddress',false);
@@ -33,9 +34,8 @@
 				return array($_);
 			}
 			else{
-				$data=array('pancard'=>$sellermore['pancard'], 'aadharcard'=>$sellermore['aadharcard'], 'rbino'=>$sellermore['rbino'], 'businessname'=>$sellermore['businessname'], 'businessaddress'=>$sellermore['businessaddress'], 'businesstype'=>$sellermore['businesstype'], 'pincode'=>$sellermore['pincode']);
+				$data=array('pancard'=>$sellermore['pancard'], 'rbino'=>$sellermore['rbino'], 'businessname'=>$sellermore['businessname'], 'businessaddress'=>$sellermore['businessaddress'], 'businesstype'=>$sellermore['businesstype'], 'pincode'=>$sellermore['pincode']);
 				$this->db->set('pancard','pancard',false);
-				$this->db->set('aadharcard','aadharcard',false);
 				$this->db->set('rbino','rbino',false);
 				$this->db->set('businessname','businessname',false);
 				$this->db->set('businessaddress','businessaddress',false);
